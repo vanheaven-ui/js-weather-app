@@ -50,13 +50,53 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 
 /***/ }),
 
+/***/ "./src/dom-ref.js":
+/*!************************!*\
+  !*** ./src/dom-ref.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"searchSect\": () => /* binding */ searchSect,\n/* harmony export */   \"displaySect\": () => /* binding */ displaySect,\n/* harmony export */   \"icon\": () => /* binding */ icon,\n/* harmony export */   \"userInput\": () => /* binding */ userInput\n/* harmony export */ });\nconst searchSect = document.getElementById('search-area');\r\nconst displaySect = document.getElementById('display-area');\r\nconst icon = document.querySelector('#display-area img');\r\nconst userInput = document.getElementById('search');\r\n\r\n\n\n//# sourceURL=webpack://js-linters/./src/dom-ref.js?");
+
+/***/ }),
+
+/***/ "./src/feed-dom.js":
+/*!*************************!*\
+  !*** ./src/feed-dom.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var _dom_ref__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom-ref */ \"./src/dom-ref.js\");\n\r\n\r\nconst createDisplayElements = (() => {\r\n  let id = 0;\r\n  const myCreateElement = (tag, classAttr='') => {\r\n    const elem = document.createElement(tag);\r\n    elem.setAttribute('class', classAttr);\r\n    return elem;\r\n  }\r\n\r\n  const appendGroup = (parent, nodes) => {\r\n    nodes.forEach((node) => {\r\n      parent.appendChild(node);\r\n    });\r\n  }\r\n\r\n  const createLayout = () => {\r\n    const displayWrap = myCreateElement('div', 'container');\r\n    displayWrap.setAttribute('id', id);\r\n    const displayRow = myCreateElement('div', 'row');\r\n    const leftCol = myCreateElement('div', 'col-12 col-md-4');\r\n    const centreCol = myCreateElement('div', 'col-12 col-md-4');\r\n    const rightCol = myCreateElement('div', 'col-12 col-md-4');\r\n    appendGroup(displayRow, [leftCol, centreCol, rightCol]);\r\n    displayWrap.appendChild(displayRow);\r\n    _dom_ref__WEBPACK_IMPORTED_MODULE_0__.displaySect.appendChild(displayWrap);\r\n    id++;\r\n  }\r\n\r\n  return { createLayout, myCreateElement };\r\n  \r\n})();\r\n\r\nconst updateUI = (conditionIcon, desc='', feel='', hum='' ) => {\r\n  createDisplayElements.createLayout();\r\n  const imgIcon = createDisplayElements.myCreateElement('img');\r\n  imgIcon.src = conditionIcon;\r\n  document.querySelectorAll('.row div')[0].appendChild(imgIcon);\r\n  document.querySelectorAll('.row div')[1];\r\n  document.querySelectorAll('.row div')[2];\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (updateUI);\n\n//# sourceURL=webpack://js-linters/./src/feed-dom.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ \"../../../../node_modules/bootstrap/dist/css/bootstrap.min.css\");\n\n\n//# sourceURL=webpack://js-linters/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ \"../../../../node_modules/bootstrap/dist/css/bootstrap.min.css\");\n/* harmony import */ var _process__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./process */ \"./src/process.js\");\n\r\n\r\n\r\n(0,_process__WEBPACK_IMPORTED_MODULE_1__.default)();\n\n//# sourceURL=webpack://js-linters/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/process.js":
+/*!************************!*\
+  !*** ./src/process.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var _request__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./request */ \"./src/request.js\");\n/* harmony import */ var _dom_ref__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dom-ref */ \"./src/dom-ref.js\");\n/* harmony import */ var _feed_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./feed-dom */ \"./src/feed-dom.js\");\n\r\n\r\n\r\n\r\nconst processWeatherJson = () => {\r\n  _dom_ref__WEBPACK_IMPORTED_MODULE_1__.userInput.addEventListener('keydown', (e) => {\r\n    if (e.key === 'Enter') {\r\n      e.preventDefault();\r\n      const response = (0,_request__WEBPACK_IMPORTED_MODULE_0__.getWeatherInfo)(_dom_ref__WEBPACK_IMPORTED_MODULE_1__.userInput.value);\r\n      response.then(res => {\r\n        if (res.ok) {\r\n        return res.json();\r\n        } else {\r\n          console.log('City you entered is not found');\r\n        } \r\n      })\r\n      .then(data => {\r\n        const iconURL = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;\r\n        (0,_feed_dom__WEBPACK_IMPORTED_MODULE_2__.default)(iconURL);  \r\n        const dupContainers = document.querySelectorAll('#display-area .container');\r\n        console.log(dupContainers);\r\n        dupContainers.forEach((container, index ) =>  {\r\n          if (index < dupContainers.length - 1) {\r\n            console.log(container);\r\n          }\r\n        });   \r\n      })\r\n      .catch(err => {\r\n        console.log(err);\r\n      });\r\n    }\r\n  });\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (processWeatherJson);\n\n//# sourceURL=webpack://js-linters/./src/process.js?");
+
+/***/ }),
+
+/***/ "./src/request.js":
+/*!************************!*\
+  !*** ./src/request.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getWeatherInfo\": () => /* binding */ getWeatherInfo\n/* harmony export */ });\nconst getWeatherInfo = async (input) => {\r\n  let requestURL = `http://api.openweathermap.org/data/2.5/weather?q=${input}&APPID=${\"e708d519ee4a1a9d638763bf478b1b8b\"}&units=metric`;\r\n  return await (fetch(requestURL, { mode: 'cors'}));\r\n};\r\n\r\n\n\n//# sourceURL=webpack://js-linters/./src/request.js?");
 
 /***/ })
 
