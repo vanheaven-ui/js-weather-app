@@ -2,6 +2,12 @@ import { getWeatherInfo } from './request';
 import { userInput } from './dom-ref';
 import updateUI from './feed-dom';
 
+const conTemp = (btn, tempField) => {
+  btn.onclick = (e) => {
+    console.log(e.target);
+  };
+};
+
 const processWeatherJson = () => {
   userInput.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
@@ -16,14 +22,13 @@ const processWeatherJson = () => {
       })
       .then(data => {
         const iconURL = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-        updateUI(iconURL);  
-        const dupContainers = document.querySelectorAll('#display-area .container');
-        console.log(dupContainers);
-        dupContainers.forEach((container, index ) =>  {
-          if (index < dupContainers.length - 1) {
-            console.log(container);
-          }
-        });   
+        const descrpt = data.weather[0].description;
+        const feels = `Feels like: ${data.main.feels_like}`;
+        const humid = `Humidity: ${data.main.humidity}`;
+        const cityTemp = `Temp: ${data.main.temp}`;
+        updateUI(iconURL, descrpt, feels, humid, cityTemp);
+        const convertTemp = document.querySelector('span.btn');
+        conTemp(convertTemp);
       })
       .catch(err => {
         console.log(err);
