@@ -1,4 +1,4 @@
-import { searchSect, displaySect, icon } from './dom-ref';
+import { searchSect, displaySect, dateVar } from './dom-ref';
 
 const createDisplayElements = (() => {
   let id = 0;
@@ -27,17 +27,34 @@ const createDisplayElements = (() => {
     id++;
   }
 
-  return { createLayout, myCreateElement };
+  return { createLayout, myCreateElement, appendGroup };
   
 })();
 
-const updateUI = (conditionIcon, desc='', feel='', hum='' ) => {
-  createDisplayElements.createLayout();
+createDisplayElements.createLayout();
+// Feed the left column
+const updateUI = (conditionIcon='', desc='', feel='', hum='', temp='') => {
+  dateVar.textContent = new Date();
   const imgIcon = createDisplayElements.myCreateElement('img');
   imgIcon.src = conditionIcon;
   document.querySelectorAll('.row div')[0].appendChild(imgIcon);
-  document.querySelectorAll('.row div')[1];
-  document.querySelectorAll('.row div')[2];
+  // Feed the centre column
+  const span1 = createDisplayElements.myCreateElement('span');
+  span1.textContent = desc;
+  const span2 = createDisplayElements.myCreateElement('span');
+  span2.textContent = feel;
+  const span3 = createDisplayElements.myCreateElement('span');
+  span3.textContent = hum;
+  createDisplayElements.appendGroup(document.querySelectorAll('.row div')[1], [span1, span2, span3]);
+  // Feed the right column
+  const tempDisplay = createDisplayElements.myCreateElement('span', 'h1');
+  tempDisplay.textContent = temp + '°C';
+  const convertBtn = createDisplayElements.myCreateElement('span', 'btn');
+  convertBtn.textContent = 'Get °F';
+  const rightSection = document.querySelectorAll('.row div')[2];
+  createDisplayElements.appendGroup(rightSection, [tempDisplay, convertBtn]);
+  // create convert btn
+
 }
 
 export default updateUI;
