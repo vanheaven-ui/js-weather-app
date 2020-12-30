@@ -1,4 +1,5 @@
 import { searchSect, displaySect, dateVar } from './dom-ref';
+import { userInput } from './dom-ref';
 
 const createDisplayElements = (() => {
   let id = 0;
@@ -51,9 +52,12 @@ const updateUI = (conditionIcon='', desc='', feel='', hum='', temp='') => {
   tempDisplay.textContent = temp + '°C';
   const convertBtn = createDisplayElements.myCreateElement('span', 'btn');
   convertBtn.textContent = 'Get °F';
+  const addCity = createDisplayElements.myCreateElement('span', 'city');
+  addCity.textContent = userInput.value;
   const rightSection = document.querySelectorAll('.row div')[2];
-  createDisplayElements.appendGroup(rightSection, [tempDisplay, convertBtn]);
-  // create convert btn
+  createDisplayElements.appendGroup(rightSection, [addCity, tempDisplay, convertBtn]);
+  // add city searched for
+
 
 }
 
