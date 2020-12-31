@@ -49,16 +49,23 @@ const resetAllColumns = () => {
   }  
 };
 
-const alertShow = (msg, elem, delay=2000) => {
+const alertShow = async (msg, elem, delay=2000) => {
   const alert = createDisplayElements.myCreateElement('p', 'alert alert-danger w-100');
   alert.textContent = msg;
   elem.insertAdjacentElement('beforebegin', alert);
-  setTimeout(() => {
+  await setTimeout(() => {
     document.querySelector('p.alert').remove();
   }, delay);
 }
 
-const updateUI = (conditionIcon='', desc='', feel='', hum='', temp='') => {
+const clearInput = async() => {
+  await setTimeout(() => userInput.value = '', 5000);
+  userInput.setAttribute('autofocus', '');
+  userInput.setAttribute('placeholder', 'Enter your city');
+};
+
+const updateUI = (conditionIcon='', desc='', feel='', hum='', temp='', defaultPlace='') => {
+  userInput.setAttribute('placeHolder', `${defaultPlace.name}`);
   dateVar.textContent = new Date();
   // Feed the left column
   const imgIcon = createDisplayElements.myCreateElement('img', 'w-100');
@@ -79,13 +86,13 @@ const updateUI = (conditionIcon='', desc='', feel='', hum='', temp='') => {
   const wrap2 = createDisplayElements.myCreateElement('div', 'wrap-2 d-flex flex-column align-items-center justify-content-center')
   const tempDisplay = createDisplayElements.myCreateElement('span', 'h1');
   tempDisplay.textContent = temp + '°C';
-  const convertBtn = createDisplayElements.myCreateElement('span', 'btn bg-success rounded-circle');
+  const convertBtn = createDisplayElements.myCreateElement('span', 'btn bg-success rounded-circle text-it');
   convertBtn.textContent = 'Get °F';
-  const addCity = createDisplayElements.myCreateElement('span', 'city');
+  const addCity = createDisplayElements.myCreateElement('span', 'city text-capitalize h4');
   addCity.textContent = userInput.value;
   const rightSection = document.getElementById('right');
   createDisplayElements.appendGroup(wrap2, [addCity, tempDisplay, convertBtn]);
   rightSection.appendChild(wrap2);
 }
 
-export { updateUI, resetAllColumns, alertShow }; 
+export { updateUI, resetAllColumns, alertShow, clearInput }; 

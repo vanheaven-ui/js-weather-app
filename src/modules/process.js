@@ -1,6 +1,6 @@
 import { getWeatherInfo } from "./request";
 import { userInput, searchSect } from "./dom-ref";
-import { updateUI, resetAllColumns, alertShow } from "./feed-dom";
+import { updateUI, resetAllColumns, alertShow, clearInput } from "./feed-dom";
 
 const conTemp = (btn, tempField) => {
   let btnValue = btn.textContent;
@@ -25,6 +25,7 @@ const processWeatherJson = () => {
   userInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
       resetAllColumns();
+      clearInput();
       e.preventDefault();
       const response = getWeatherInfo(userInput.value);
       response
