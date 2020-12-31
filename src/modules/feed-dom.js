@@ -16,7 +16,7 @@ const createDisplayElements = (() => {
   const createLayout = () => {
     const displayWrap = myCreateElement('div', 'container');
     const displayRow = myCreateElement('div', 'row');
-    displayRow.setAttribute('style', 'background-color: rgba(255, 68, 34, 0.4);');
+    displayRow.setAttribute('style', 'background-color: rgba(255, 255, 255, 0.3);');
     const leftCol = myCreateElement('div', 'col-12 col-md-4');
     leftCol.setAttribute('id', 'left');
     const centreCol = myCreateElement('div', 'col-12 col-md-4');
@@ -75,43 +75,43 @@ const backGroundMgr = (desc) => {
       case 'clear sky':
         document.body.setAttribute(
           'style',
-          'background: radial-gradient(circle, #ffc100 0%, #FF900D 100%);',
+          'background: radial-gradient(circle, #ffc100 0%, #FF900D 100%); color: #f1f1e2;',
         );
         break;
       case 'few clouds':
         document.body.setAttribute(
           'style',
-          'background: linear-gradient(to bottom, #3987c9 0%, #e1e5ed 100%);',
+          'background: linear-gradient(to bottom, #1e528e 0%,#265889 50%,#9da671 100%); color: #f1f1e2;',
         );
         break;
       case 'scattered clouds':
         document.body.setAttribute(
           'style',
-          'background: linear-gradient(to bottom, #ffff72 0%, #f9f9f7 100%);',
+          'background: linear-gradient(to bottom, #1e528e 0%,#265889 50%,#9da671 100%); color: #f1f1e2;',
         );
         break;
       case 'broken clouds':
         document.body.setAttribute(
           'style',
-          'background: linear-gradient(to bottom, #ffff72 0%, #f9f9f7 100%);',
+          'background: linear-gradient(to bottom, #1e528e 0%,#265889 50%,#9da671 100%); color: #f1f1e2;',
         );
         break;
       case 'shower rain':
         document.body.setAttribute(
           'style',
-          ';',
+          'background: linear-gradient(to bottom, #2473ab 0%,#1e528e 70%,#5b7983 100%); color: #fff;',
         );
         break;
       case 'rain':
         document.body.setAttribute(
           'style',
-          ';',
+          'background: linear-gradient(to bottom, #2473ab 0%,#1e528e 70%,#5b7983 100%); color: #fff;',
         );
         break;
       case 'thunderstorm':
         document.body.setAttribute(
           'style',
-          'background: linear-gradient(to bottom, #ffff72 0%, #f9f9f7 100%);',
+          'background: linear-gradient(to bottom, #2473ab 0%,#1e528e 70%,#5b7983 100%); color: #fff;',
         );
         break;
       case 'snow':
@@ -129,7 +129,7 @@ const backGroundMgr = (desc) => {
       default:
         document.body.setAttribute(
           'style',
-          'background: linear-gradient(to bottom, #3987c9 0%, #e1e5ed 100%);',
+          'background: linear-gradient(to bottom, #154277 0%,#576e71 30%,#e1c45e 70%,#b26339 100%); color: #f1f1e2;',
         );
         break;
     }
@@ -138,59 +138,59 @@ const backGroundMgr = (desc) => {
       case 'clear sky':
         document.body.setAttribute(
           'style',
-          'background-image: url(../images/clearskynight.jpg)',
+          'background: linear-gradient(to bottom, #010A10 30%,#59230B 80%,#2F1107 100%); color: #f1f1e2;',
         );
         break;
       case 'few clouds':
         document.body.setAttribute(
           'style',
-          'background-image: url(../images/fewcloudsnight.jpg);',
+          'background: linear-gradient(to bottom, #020111 10%,#3a3a52 100%); color: #fff;',
         );
         break;
       case 'scattered clouds':
         document.body.setAttribute(
           'style',
-          'background-image: url(../images/scatterenight.jpeg);',
+          'background: linear-gradient(to bottom, #020111 60%,#20202c 100%); color: #fff',
         );
         break;
       case 'broken clouds':
         document.body.setAttribute(
           'style',
-          'background-image: url(../images/scatterenight.jpeg);',
+          'background: linear-gradient(to bottom, #020111 60%,#20202c 100%); color: #fff',
         );
         break;
       case 'shower rain':
         document.body.setAttribute(
           'style',
-          'background-image: url(../images/nightrain.jpeg);',
+          'background: linear-gradient(to bottom, #020111 60%,#20202c 100%); color: #fff;',
         );
         break;
       case 'rain':
         document.body.setAttribute(
           'style',
-          'background-image: url(../images/nightrain.jpeg);',
+          'background: linear-gradient(to bottom, #020111 60%,#20202c 100%); color: #fff;',
         );
         break;
       case 'thunderstorm':
         document.body.setAttribute(
           'style',
-          'background-image: url(../images/nightthunderstom.jpeg);',
+          'background: linear-gradient(to bottom, #020111 85%,#191621 100%); color: #fff;',
         );
         break;
       case 'snow':
         document.body.setAttribute(
           'style',
-          'background-image: url(../images/nightsnow.jpg);',
+          'background: linear-gradient(to bottom, #b7eaff 0%,#94dfff 100%); color: #111;',
         );
         break;
       case 'mist':
         document.body.setAttribute(
           'style',
-          'background-image: url(../images/mistnight.jpeg);',
+          'background: linear-gradient(to bottom, #b7eaff 0%,#94dfff 100%); color: #111',
         );
         break;
       default:
-        document.body.setAttribute('style', 'background: linear-gradient(to bottom, #1d65f0 0%, #1ad3fd 100%);');
+        document.body.setAttribute('style', 'background: linear-gradient(to bottom, #020111 10%,#3a3a52 100%); color: #fff;');
         break;
     }
   }

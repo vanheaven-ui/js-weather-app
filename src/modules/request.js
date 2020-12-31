@@ -1,18 +1,34 @@
 import { updateUI, backGroundMgr, alertShow } from './feed-dom';
-import { conTemp } from './process';
 import { userInput } from './dom-ref';
 
-const OWM_KEY = process.env.OWM_API_KEY || config.MY_OWM_API_KEY;
+const conTemp = (btn, tempField) => {
+  const btnValue = btn.textContent;
+  const tempStr = tempField.textContent.slice(6, 8);
+  const classArr = Array.from(btn.classList);
+  if (btnValue.includes('°F')) {
+    const fahValue = Math.round((parseInt(tempStr, 10) * 9) / 5 + 32);
+    tempField.textContent = `Temp: ${fahValue}°F`;
+    btn.textContent = 'Get °C';
+    classArr.splice(classArr.indexOf('bg-success'), 1, 'bg-danger');
+    btn.setAttribute('class', classArr.join(' '));
+  } else {
+    const celsValue = Math.round(((parseInt(tempStr, 10) - 32) * 5) / 9);
+    tempField.textContent = `Temp: ${celsValue}°C`;
+    btn.textContent = 'Get °F';
+    classArr.splice(classArr.indexOf('bg-danger'), 1, 'bg-success');
+    btn.setAttribute('class', classArr.join(' '));
+  }
+};
 
 const getWeatherInfo = (input) => {
-  const requestURL = `https://api.openweathermap.org/data/2.5/weather?q=${input}&APPID=${OWM_KEY}&units=metric`;
+  const requestURL = `https://api.openweathermap.org/data/2.5/weather?q=${input}&APPID=${process.env.OWM_API_KEY}&units=metric`;
   return fetch(requestURL, { mode: 'cors' });
 };
 
 const successCB = (posObj) => {
   const lat = posObj.coords.latitude;
   const lon = posObj.coords.longitude;
-  const defaultURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${OWM_KEY}&units=metric`;
+  const defaultURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.OWM_API_KEY}&units=metric`;
   fetch(defaultURL)
     .then((res) => res.json())
     .then((data) => {
@@ -43,4 +59,4 @@ const getUserLocation = () => {
   navigator.geolocation.getCurrentPosition(successCB, failCB);
 };
 
-export { getWeatherInfo, getUserLocation };
+export { getWeatherInfo, getUserLocation, conTemp };

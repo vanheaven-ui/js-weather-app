@@ -5,6 +5,10 @@
   justify-content: center;
 }
 
+#center {
+  font-size: larger;
+}
+
 .text-it {
   font-size: 1.2rem;
 }
@@ -16,13 +20,6 @@
 }
 
 body {
-  /* background: linear-gradient(to bottom, #1d65f0 0%, #1ad3fd 100%); */
-
-  /* background: linear-gradient(to bottom, 	 #3987c9 0%, 		#e1e5ed 100%); */
-
-  /* background: linear-gradient(to bottom, 	#ffff72 0%, 	#f9f9f7 100%) */
-
-  /* background: radial-gradient(circle, 	#ffc100 0%, 	#FF900D 100%) */
   height: 100vh;
   background-repeat: no-repeat;
   font-family: Gotham Narrow SSm A, Gotham Narrow SSm B, Rubik, Lato, sans-serif;
@@ -31,8 +28,4 @@ body {
 h1 {
   font-size: xxx-large;
   text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
-}
-
-h2 {
-  font-family: Sentinel SSm A, Sentinel SSm B, sans-serif;
 }
