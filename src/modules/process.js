@@ -1,27 +1,8 @@
-import { getWeatherInfo } from './request';
+import { getWeatherInfo, conTemp } from './request';
 import { userInput, searchSect } from './dom-ref';
 import {
   updateUI, resetAllColumns, alertShow, clearInput, backGroundMgr,
 } from './feed-dom';
-
-const conTemp = (btn, tempField) => {
-  const btnValue = btn.textContent;
-  const tempStr = tempField.textContent.slice(6, 8);
-  const classArr = Array.from(btn.classList);
-  if (btnValue.includes('°F')) {
-    const fahValue = Math.round((parseInt(tempStr, 10) * 9) / 5 + 32);
-    tempField.textContent = `Temp: ${fahValue}°F`;
-    btn.textContent = 'Get °C';
-    classArr.splice(classArr.indexOf('bg-success'), 1, 'bg-danger');
-    btn.setAttribute('class', classArr.join(' '));
-  } else {
-    const celsValue = Math.round(((parseInt(tempStr, 10) - 32) * 5) / 9);
-    tempField.textContent = `Temp: ${celsValue}°C`;
-    btn.textContent = 'Get °F';
-    classArr.splice(classArr.indexOf('bg-danger'), 1, 'bg-success');
-    btn.setAttribute('class', classArr.join(' '));
-  }
-};
 
 const processWeatherJson = () => {
   userInput.addEventListener('keydown', (e) => {
@@ -36,6 +17,7 @@ const processWeatherJson = () => {
             return res.json();
           }
           alertShow('The city you entered is not found', userInput);
+          return new Error();
         })
         .then((data) => {
           const iconURL = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
@@ -58,4 +40,4 @@ const processWeatherJson = () => {
   });
 };
 
-export { processWeatherJson, conTemp };
+export default processWeatherJson;
