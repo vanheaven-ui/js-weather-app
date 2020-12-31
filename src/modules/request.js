@@ -1,5 +1,6 @@
 import { updateUI, backGroundMgr } from './feed-dom';
 import { conTemp } from './process';
+import { userInput } from './dom-ref';
 
 const getWeatherInfo = async (input) => {
   let requestURL = `https://api.openweathermap.org/data/2.5/weather?q=${input}&APPID=${process.env.OWM_API_KEY}&units=metric`;
@@ -16,6 +17,7 @@ const successCB = (posObj) => {
       return res.json();
     })
     .then((data) => {
+      userInput.setAttribute('placeholder', `${data.name}`);
       const iconURL = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
       const descrpt = data.weather[0].description;
       const feels = `Feels like: ${data.main.feels_like}`;

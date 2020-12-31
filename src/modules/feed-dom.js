@@ -64,6 +64,8 @@ const alertShow = async (msg, elem, delay = 2000) => {
 const clearInput = async () => {
   await setTimeout(() => {
     userInput.value = "";
+    userInput.setAttribute('placeholder', 'Enter your city');
+    userInput.setAttribute('autofocus', '');
   }, 5000);
 };
 

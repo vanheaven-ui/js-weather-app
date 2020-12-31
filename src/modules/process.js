@@ -25,7 +25,7 @@ const processWeatherJson = () => {
   userInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
       resetAllColumns();
-      // clearInput();
+      clearInput();
       e.preventDefault();
       const response = getWeatherInfo(userInput.value);
       response
