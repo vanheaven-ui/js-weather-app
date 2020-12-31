@@ -1,21 +1,20 @@
-import { updateUI, backGroundMgr } from './feed-dom';
+import { updateUI, backGroundMgr, alertShow } from './feed-dom';
 import { conTemp } from './process';
 import { userInput } from './dom-ref';
 
-const getWeatherInfo = async (input) => {
-  let requestURL = `https://api.openweathermap.org/data/2.5/weather?q=${input}&APPID=${process.env.OWM_API_KEY}&units=metric`;
-  return await fetch(requestURL, { mode: "cors" });
+const OWM_KEY = process.env.OWM_API_KEY || config.MY_OWM_API_KEY;
+
+const getWeatherInfo = (input) => {
+  const requestURL = `https://api.openweathermap.org/data/2.5/weather?q=${input}&APPID=${OWM_KEY}&units=metric`;
+  return fetch(requestURL, { mode: 'cors' });
 };
 
 const successCB = (posObj) => {
   const lat = posObj.coords.latitude;
   const lon = posObj.coords.longitude;
-  console.log(lat, lon);
-  let defaultURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.OWM_API_KEY}&units=metric`;
+  const defaultURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${OWM_KEY}&units=metric`;
   fetch(defaultURL)
-    .then((res) => {
-      return res.json();
-    })
+    .then((res) => res.json())
     .then((data) => {
       userInput.setAttribute('placeholder', `${data.name}`);
       const iconURL = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
@@ -25,9 +24,8 @@ const successCB = (posObj) => {
       const cityTemp = `Temp: ${Math.round(data.main.temp)}`;
       updateUI(iconURL, descrpt, feels, humid, cityTemp, data);
       document.querySelector('span.city').textContent = data.name;
-      const convertTemp = document.querySelector("span.btn");
-      const tempField = document.querySelector("span.h1");
-      console.log(typeof(descrpt));
+      const convertTemp = document.querySelector('span.btn');
+      const tempField = document.querySelector('span.h1');
       backGroundMgr(descrpt);
       convertTemp.onclick = () => {
         conTemp(convertTemp, tempField);
@@ -36,14 +34,13 @@ const successCB = (posObj) => {
 };
 
 const failCB = (errObj) => {
-  document.body.classList.add("bg-info");
+  alertShow(errObj, userInput, 0);
+  document.body.classList.add('bg-info');
   userInput.setAttribute('placeholder', 'Enter your city');
 };
 
 const getUserLocation = () => {
   navigator.geolocation.getCurrentPosition(successCB, failCB);
 };
-
-const defaultContent = () => {};
 
 export { getWeatherInfo, getUserLocation };

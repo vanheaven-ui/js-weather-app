@@ -10,23 +10,23 @@ module.exports = {
   },
 
   plugins: [
-    new Dotenv()
+    new Dotenv(),
   ],
 
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         use: [
           {
             loader: 'file-loader',
-          }
+          },
         ],
       },
     ],
-  }
+  },
 };
