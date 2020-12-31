@@ -1,6 +1,6 @@
 import { getWeatherInfo } from "./request";
 import { userInput, searchSect } from "./dom-ref";
-import { updateUI, resetAllColumns, alertShow, clearInput } from "./feed-dom";
+import { updateUI, resetAllColumns, alertShow, clearInput, backGroundMgr } from "./feed-dom";
 
 const conTemp = (btn, tempField) => {
   let btnValue = btn.textContent;
@@ -25,7 +25,7 @@ const processWeatherJson = () => {
   userInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
       resetAllColumns();
-      clearInput();
+      // clearInput();
       e.preventDefault();
       const response = getWeatherInfo(userInput.value);
       response
@@ -45,10 +45,10 @@ const processWeatherJson = () => {
           updateUI(iconURL, descrpt, feels, humid, cityTemp);
           const convertTemp = document.querySelector("span.btn");
           const tempField = document.querySelector("span.h1");
+          backGroundMgr(descrpt);
           convertTemp.onclick= () => {
             conTemp(convertTemp, tempField);
-          }
-          
+          };          
         })
         .catch((err) => {
           alertShow(err, searchSect, 0);
@@ -57,4 +57,4 @@ const processWeatherJson = () => {
   });
 };
 
-export default processWeatherJson;
+export { processWeatherJson, conTemp };
