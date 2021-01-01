@@ -12,7 +12,7 @@ A web application to provide weather details of the place entered by the user.
 
 ## Application Screenshot
 
-![Screenshot](dist/screenshot.gif)
+![Screenshot](dist/images/screenshot.gif)
 
 ## Content
 
@@ -25,12 +25,12 @@ A web application to provide weather details of the place entered by the user.
 
 
 ## About <a name = "about"></a>
-This project was a task by [Microverse Inc.](https://www.microverse.org/) to build a web application where users can request weather information of any city of their choice. To achieve this, the web application in this repository makes use of the [open weather map api](https://openweathermap.org/) and ES6 features like arrow functions, both promises, async and await for asynchronous processes. More so, webpack was used to bundle the different script files into one file for distribution.
+This project was a task by [Microverse Inc.](https://www.microverse.org/) to build a web application where users can request weather information of any choice city. To achieve this, the web application in this repository makes use of the [open weather map api](https://openweathermap.org/) and ES6 features like arrow functions, both promises, and async and await for asynchronous processes. More so, webpack was used to bundle the different script files into one file for distribution.
 
 ## App Deployment
 The built app is published through Github pages <br />
 
-### You may see the live version [here]()
+### You may see the live version [here](https://vanheaven-ui.github.io/js-weather-app/)
 
 ## 🔧 Built with<a name = "with"></a>
 
@@ -62,7 +62,9 @@ If you don't meet the above prerequisites, then:
 ###  App <a name = "app"></a>
 With the installations above complete, you are set to use the code and view the application built in this repository. Follow these simple steps:
 
-- Change directory into the directory where you cloned the repository. ``cd js-weather-app``.
+- Change directory into the directory where you cloned the repository. 
+- Then run ``cd js-weather-app`` to access the project directory.
+- Open the project directory in your editor of choice. For example running ``code .`` will open the project in VSCode.
 - Run ``npm run watch`` to start webpack bundling.
 - When complete, open the index.html file using your browser.
 
