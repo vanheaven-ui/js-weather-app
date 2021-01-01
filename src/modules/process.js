@@ -30,9 +30,10 @@ const processWeatherJson = () => {
           updateUI(iconURL, descrpt, feels, humid, cityTemp, data.sys.country);
           const convertTemp = document.querySelector('span.btn');
           const tempField = document.querySelector('span.h1');
+          const feelVal = document.querySelector('.feel');
           backGroundMgr(descrpt);
           convertTemp.onclick = () => {
-            conTemp(convertTemp, tempField);
+            conTemp(convertTemp, tempField, feelVal);
           };
         })
         .catch((err) => {
