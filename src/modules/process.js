@@ -6,21 +6,20 @@ import {
 
 const processWeatherJson = () => {
   userInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {     
+    if (e.key === 'Enter') {
       spinner.style.display = 'block';
       resetAllColumns();
       clearInput();
       e.preventDefault();
       const response = getWeatherInfo(userInput.value);
       response
-        .then((res) => { 
+        .then((res) => {
           spinner.style.display = 'none';
-          if (res.ok) { 
+          if (res.ok) {
             return res.json();
-          } else {
-            alertShow('The city you entered is not found', userInput, 3000);
-            return new Error();
           }
+          alertShow('The city you entered is not found', userInput, 3000);
+          return new Error();
         })
         .then((data) => {
           const iconURL = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
