@@ -65,7 +65,7 @@ With the installations above complete, you are set to use the code and view the 
 - Change directory into the directory where you cloned the repository. 
 - Then run ``cd js-weather-app`` to access the project directory.
 - Open the project directory in your editor of choice. For example running ``code .`` will open the project in VSCode.
-- Run ``npm run watch`` to start webpack bundling.
+- Run ``npm start`` to start webpack-dev-server.
 - When complete, open the index.html file using your browser.
 
 ## ✒️  Author <a name = "author"></a>

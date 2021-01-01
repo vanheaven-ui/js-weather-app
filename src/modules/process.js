@@ -16,7 +16,7 @@ const processWeatherJson = () => {
           if (res.ok) {
             return res.json();
           }
-          alertShow('The city you entered is not found', userInput);
+          alertShow('The city you entered is not found', userInput, 3000);
           return new Error();
         })
         .then((data) => {
