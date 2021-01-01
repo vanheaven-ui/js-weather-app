@@ -37,6 +37,9 @@ The built app is published through Github pages <br />
   - [x] Javascript(ES6).
   - [x] bootstrap.
   - [x] Webpack.
+  - [x] open weather map api
+  - [x] geolocation api
+
 
 ## Usage <a name = "usage"></a>
 To use the code in this repository, follow the steps in this section:
