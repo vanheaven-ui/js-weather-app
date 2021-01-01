@@ -75,7 +75,7 @@ const backGroundMgr = (desc) => {
       case 'clear sky':
         document.body.setAttribute(
           'style',
-          'background: radial-gradient(circle, #ffc100 0%, #FF900D 100%); color: #f1f1e2;',
+          'background: linear-gradient(to bottom, #9be2fe 0%,#67d1fb 100%);',
         );
         break;
       case 'few clouds':
@@ -123,14 +123,16 @@ const backGroundMgr = (desc) => {
       case 'mist':
         document.body.setAttribute(
           'style',
-          'background-image: url(../images/mist.jpeg);',
+          'background: linear-gradient(to bottom, #b7eaff 0%,#94dfff 100%);',
         );
+        document.querySelector('.row').setAttribute('style', 'color: #333; background-color: rgba(255, 254, 251, 0.5);');
         break;
       default:
         document.body.setAttribute(
           'style',
           'background: linear-gradient(to bottom, #154277 0%,#576e71 30%,#e1c45e 70%,#b26339 100%); color: #f1f1e2;',
         );
+        document.querySelector('.row').setAttribute('style', 'background-color: rgba(255, 255, 255, 0.3); color: #333;');
         break;
     }
   } else {
@@ -215,11 +217,11 @@ const updateUI = (
     'div',
     'wrap-1 d-flex flex-column align-items-center justify-content-center',
   );
-  const span1 = createDisplayElements.myCreateElement('span');
+  const span1 = createDisplayElements.myCreateElement('span', 'mb-1 text-capitalize');
   span1.textContent = desc;
-  const span2 = createDisplayElements.myCreateElement('span');
+  const span2 = createDisplayElements.myCreateElement('span', 'mb-1');
   span2.textContent = feel;
-  const span3 = createDisplayElements.myCreateElement('span');
+  const span3 = createDisplayElements.myCreateElement('span', 'mb-1');
   span3.textContent = hum;
   createDisplayElements.appendGroup(wrap1, [span1, span2, span3]);
   const centerSection = document.getElementById('centre');
@@ -240,7 +242,7 @@ const updateUI = (
     'span',
     'city text-capitalize h4',
   );
-  addCity.textContent = userInput.value;
+  addCity.textContent = `${userInput.value}, ${defaultPlace}`;
   const rightSection = document.getElementById('right');
   createDisplayElements.appendGroup(wrap2, [addCity, tempDisplay, convertBtn]);
   rightSection.appendChild(wrap2);

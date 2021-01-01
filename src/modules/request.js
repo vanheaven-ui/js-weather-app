@@ -38,8 +38,8 @@ const successCB = (posObj) => {
       const feels = `Feels like: ${data.main.feels_like}`;
       const humid = `Humidity: ${data.main.humidity}`;
       const cityTemp = `Temp: ${Math.round(data.main.temp)}`;
-      updateUI(iconURL, descrpt, feels, humid, cityTemp, data);
-      document.querySelector('span.city').textContent = data.name;
+      updateUI(iconURL, descrpt, feels, humid, cityTemp);
+      document.querySelector('span.city').textContent = `${data.name}, ${data.sys.country}`;
       const convertTemp = document.querySelector('span.btn');
       const tempField = document.querySelector('span.h1');
       backGroundMgr(descrpt);
