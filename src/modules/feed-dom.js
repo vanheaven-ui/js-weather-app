@@ -219,10 +219,10 @@ const updateUI = (
   );
   const span1 = createDisplayElements.myCreateElement('span', 'mb-1 text-capitalize');
   span1.textContent = desc;
-  const span2 = createDisplayElements.myCreateElement('span', 'mb-1');
-  span2.textContent = feel;
+  const span2 = createDisplayElements.myCreateElement('span', 'mb-1 feel');
+  span2.textContent = `${feel}°C`;
   const span3 = createDisplayElements.myCreateElement('span', 'mb-1');
-  span3.textContent = hum;
+  span3.textContent = `${hum}%`;
   createDisplayElements.appendGroup(wrap1, [span1, span2, span3]);
   const centerSection = document.getElementById('centre');
   centerSection.appendChild(wrap1);

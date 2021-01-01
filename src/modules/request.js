@@ -5,15 +5,18 @@ const conTemp = (btn, tempField) => {
   const btnValue = btn.textContent;
   const tempStr = tempField.textContent.slice(6, 8);
   const classArr = Array.from(btn.classList);
+  const feelField = document.querySelector('.feel');
   if (btnValue.includes('°F')) {
     const fahValue = Math.round((parseInt(tempStr, 10) * 9) / 5 + 32);
     tempField.textContent = `Temp: ${fahValue}°F`;
+    feelField.textContent = `Feels like: ${fahValue}°F`;
     btn.textContent = 'Get °C';
     classArr.splice(classArr.indexOf('bg-success'), 1, 'bg-danger');
     btn.setAttribute('class', classArr.join(' '));
   } else {
     const celsValue = Math.round(((parseInt(tempStr, 10) - 32) * 5) / 9);
     tempField.textContent = `Temp: ${celsValue}°C`;
+    feelField.textContent = `Feels like: ${celsValue}°C`;
     btn.textContent = 'Get °F';
     classArr.splice(classArr.indexOf('bg-danger'), 1, 'bg-success');
     btn.setAttribute('class', classArr.join(' '));
