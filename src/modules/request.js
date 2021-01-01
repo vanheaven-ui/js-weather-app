@@ -1,22 +1,24 @@
 import { updateUI, backGroundMgr, alertShow } from './feed-dom';
 import { userInput } from './dom-ref';
 
-const conTemp = (btn, tempField) => {
+const conTemp = (btn, tempField, feelValue) => {
   const btnValue = btn.textContent;
   const tempStr = tempField.textContent.slice(6, 8);
   const classArr = Array.from(btn.classList);
-  const feelField = document.querySelector('.feel');
+  const feelFieldStr = feelValue.textContent.slice(12, 14);
   if (btnValue.includes('°F')) {
     const fahValue = Math.round((parseInt(tempStr, 10) * 9) / 5 + 32);
+    const feelFahValue = Math.round((parseInt(feelFieldStr, 10) * 9) / 5 + 32);
     tempField.textContent = `Temp: ${fahValue}°F`;
-    feelField.textContent = `Feels like: ${fahValue}°F`;
+    feelValue.textContent = `Feels like: ${feelFahValue}°F`;
     btn.textContent = 'Get °C';
     classArr.splice(classArr.indexOf('bg-success'), 1, 'bg-danger');
     btn.setAttribute('class', classArr.join(' '));
   } else {
     const celsValue = Math.round(((parseInt(tempStr, 10) - 32) * 5) / 9);
+    const feelCelsValue = Math.round(((parseInt(feelFieldStr, 10) - 32) * 5) / 9);
     tempField.textContent = `Temp: ${celsValue}°C`;
-    feelField.textContent = `Feels like: ${celsValue}°C`;
+    feelValue.textContent = `Feels like: ${feelCelsValue}°C`;
     btn.textContent = 'Get °F';
     classArr.splice(classArr.indexOf('bg-danger'), 1, 'bg-success');
     btn.setAttribute('class', classArr.join(' '));
@@ -38,16 +40,17 @@ const successCB = (posObj) => {
       userInput.setAttribute('placeholder', `${data.name}`);
       const iconURL = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
       const descrpt = data.weather[0].description;
-      const feels = `Feels like: ${data.main.feels_like}`;
+      const feels = `Feels like: ${Math.round(data.main.feels_like)}`;
       const humid = `Humidity: ${data.main.humidity}`;
       const cityTemp = `Temp: ${Math.round(data.main.temp)}`;
       updateUI(iconURL, descrpt, feels, humid, cityTemp);
       document.querySelector('span.city').textContent = `${data.name}, ${data.sys.country}`;
       const convertTemp = document.querySelector('span.btn');
       const tempField = document.querySelector('span.h1');
+      const feelVal = document.querySelector('.feel');
       backGroundMgr(descrpt);
       convertTemp.onclick = () => {
-        conTemp(convertTemp, tempField);
+        conTemp(convertTemp, tempField, feelVal);
       };
     });
 };
