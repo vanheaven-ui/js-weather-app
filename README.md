@@ -30,7 +30,7 @@ This project was a task by [Microverse Inc.](https://www.microverse.org/) to bui
 ## App Deployment
 The built app is published through Github pages <br />
 
-### You may see the live version [here](https://vanheaven-ui.github.io/js-weather-app/)
+### You may see the live version [here](https://elastic-shannon-e9e91c.netlify.app/)
 
 ## 🔧 Built with<a name = "with"></a>
 
