@@ -21,11 +21,11 @@ const createDisplayElements = (() => {
     const displayWrap = myCreateElement('div', 'container');
     const displayRow = myCreateElement('div', 'row');
     displayRow.setAttribute('style', 'background-color: rgba(255, 255, 255, 0.3);');
-    const leftCol = myCreateElement('div', 'col-12 col-md-4');
+    const leftCol = myCreateElement('div', 'col-12 col-md-4 order-2 order-md-1');
     leftCol.setAttribute('id', 'left');
-    const centreCol = myCreateElement('div', 'col-12 col-md-4');
+    const centreCol = myCreateElement('div', 'col-12 col-md-4 order-3 order-md-2');
     centreCol.setAttribute('id', 'centre');
-    const rightCol = myCreateElement('div', 'col-12 col-md-4');
+    const rightCol = myCreateElement('div', 'col-12 col-md-4 order-1 order-md-3 pt-3 p-md-0');
     rightCol.setAttribute('id', 'right');
     appendGroup(displayRow, [leftCol, centreCol, rightCol]);
     displayWrap.appendChild(displayRow);
