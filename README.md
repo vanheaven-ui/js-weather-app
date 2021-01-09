@@ -30,7 +30,7 @@ This project was a task by [Microverse Inc.](https://www.microverse.org/) to bui
 ## App Deployment
 The built app is hosted on netlify <br />
 
-### You may see the live version [here](https://elastic-shannon-e9e91c.netlify.app/)
+### You may see the live version [here](https://brave-davinci-1827e5.netlify.app/)
 
 ## 🔧 Built with<a name = "with"></a>
 
