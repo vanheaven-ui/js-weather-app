@@ -79,30 +79,30 @@ const backGroundMgr = (desc) => {
       case 'clear sky':
         document.body.setAttribute(
           'class',
-          'clearsky',
+          'clearsky size-no-repeat',
         );
         break;
       case 'few clouds':
         document.body.setAttribute(
           'class',
-          'fewcloud',
+          'fewcloud size-no-repeat',
         );
         break;
       case 'scattered clouds':
         document.body.setAttribute(
-          'class', 'scatteredcloud'
+          'class', 'scatteredcloud size-no-repeat'
           // 'background: linear-gradient(to bottom, #1e528e 0%,#265889 50%,#9da671 100%); color: #f1f1e2;',
         );
         break;
       case 'broken clouds':
         document.body.setAttribute(
-          'class', 'scatteredcloud'
+          'class', 'scatteredcloud size-no-repeat'
           // 'background: linear-gradient(to bottom, #1e528e 0%,#265889 50%,#9da671 100%); color: #f1f1e2;',
         );
         break;
       case 'shower rain':
         document.body.setAttribute(
-          'class', 'rain'
+          'class', 'rain size-no-repeat'
           // 'background: linear-gradient(to bottom, #2473ab 0%,#1e528e 70%,#5b7983 100%); color: #fff;',
         );
         break;
@@ -114,26 +114,26 @@ const backGroundMgr = (desc) => {
         break;
       case 'thunderstorm':
         document.body.setAttribute(
-          'class', 'thunderstorm'
+          'class', 'thunderstorm size-no-repeat'
           // 'background: linear-gradient(to bottom, #2473ab 0%,#1e528e 70%,#5b7983 100%); color: #fff;',
         );
         break;
       case 'snow':
         document.body.setAttribute(
-          'class', 'snow'
+          'class', 'snow size-no-repeat'
           // 'background: linear-gradient(to bottom, #3987c9 0%, #e1e5ed 100%);',
         );
         break;
       case 'mist':
         document.body.setAttribute(
-          'class', 'mist'
+          'class', 'mist size-no-repeat'
           // 'background: linear-gradient(to bottom, #b7eaff 0%,#94dfff 100%);',
         );
         document.querySelector('.row').setAttribute('style', 'color: #333; background-color: rgba(255, 254, 251, 0.5);');
         break;
       default:
         document.body.setAttribute(
-          'class', 'default'
+          'class', 'default size-no-repeat'
           // 'background: linear-gradient(to bottom, #154277 0%,#576e71 30%,#e1c45e 70%,#b26339 100%); color: #f1f1e2;',
         );
         document.querySelector('.row').setAttribute('style', 'background-color: rgba(255, 255, 255, 0.3); color: #333;');
@@ -144,59 +144,71 @@ const backGroundMgr = (desc) => {
       case 'clear sky':
         document.body.setAttribute(
           'class',
-          'background: linear-gradient(to bottom, #010A10 30%,#59230B 80%,#2F1107 100%); color: #f1f1e2;',
+          'clearskynight size-no-repeat',
         );
+        document.getElementById('search-area').setAttribute('style', 'color: #f1f1e2;')
         break;
       case 'few clouds':
         document.body.setAttribute(
           'class',
-          'background: linear-gradient(to bottom, #020111 10%,#3a3a52 100%); color: #fff;',
+          'fewcloudnight size-no-repeat',
         );
+        document.getElementById('search-area').setAttribute('style', 'color: #f1f1e2;')
         break;
       case 'scattered clouds':
         document.body.setAttribute(
           'class',
-          'background: linear-gradient(to bottom, #020111 60%,#20202c 100%); color: #fff',
+          'scatterednight size-no-repeat',
         );
+        document.getElementById('search-area').setAttribute('style', 'color: #f1f1e2;')
         break;
       case 'broken clouds':
         document.body.setAttribute(
           'class',
-          'background: linear-gradient(to bottom, #020111 60%,#20202c 100%); color: #fff',
+          'scatterednight size-no-repeat',
         );
+        document.getElementById('search-area').setAttribute('style', 'color: #f1f1e2;')
         break;
       case 'shower rain':
         document.body.setAttribute(
           'class',
-          'background: linear-gradient(to bottom, #020111 60%,#20202c 100%); color: #fff;',
+          'nightrain size-no-repeat',
         );
+        document.getElementById('search-area').setAttribute('style', 'color: #f1f1e2;')
         break;
       case 'rain':
         document.body.setAttribute(
           'class',
-          'background: linear-gradient(to bottom, #020111 60%,#20202c 100%); color: #fff;',
+          'nightrain size-no-repeat',
         );
+        document.getElementById('search-area').setAttribute('style', 'color: #f1f1e2;')
         break;
       case 'thunderstorm':
         document.body.setAttribute(
           'class',
-          'background: linear-gradient(to bottom, #020111 85%,#191621 100%); color: #fff;',
+          'nightthunderstorm size-no-repeat',
         );
+        document.getElementById('search-area').setAttribute('style', 'color: #f1f1e2;')
         break;
       case 'snow':
         document.body.setAttribute(
           'class',
-          'background: linear-gradient(to bottom, #b7eaff 0%,#94dfff 100%); color: #111;',
+          'nightsnow size-no-repeat',
         );
+        document.getElementById('search-area').setAttribute('style', 'color: #f1f1e2;')
         break;
       case 'mist':
         document.body.setAttribute(
           'class',
-          'background: linear-gradient(to bottom, #b7eaff 0%,#94dfff 100%); color: #111',
+          'mistnight size-no-repeat',
         );
+        document.getElementById('search-area').setAttribute('style', 'color: #f1f1e2;');
+        document.querySelector('.row').setAttribute('style', 'background-color: rgba(255, 255, 255, 0.3);');
         break;
       default:
-        document.body.setAttribute(style, 'background: linear-gradient(to bottom, #020111 10%,#3a3a52 100%); color: #fff;');
+        document.body.setAttribute('class', 'default size-no-repeat');
+        document.getElementById('search-area').setAttribute('style', 'color: #111;');
+        document.querySelector('.row').setAttribute('style', 'background-color: rgba(0, 0, 0, 0.3);');
         break;
     }
   }

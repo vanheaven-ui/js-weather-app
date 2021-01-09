@@ -12,7 +12,7 @@ A web application to provide weather details of the place entered by the user.
 
 ## Application Screenshot
 
-![Screenshot](dist/images/screenshot.gif)
+![Screenshot](screenshot/screenshot.gif)
 
 ## Content
 

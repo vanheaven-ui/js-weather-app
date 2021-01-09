@@ -28,116 +28,102 @@ body {
   color: #fff;
 }
 
-.default {
-  background-image: url(../images/default.jpg);
+.row {
+  border-top-right-radius: 50px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 5px;
+  border-top: outset #fff;
+  border-bottom: ridge #111;
+}
+
+.size-no-repeat {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.default {
+  background-image: url(../images/default.jpg);
 }
 
 .clearsky {
   background-image: url(../images/clearsky.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .clearskynight {
   background-image: url(../images/clearskynight.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .fewcloud {
   background-image: url(../images/fewcloud.jpeg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .fewcloudnight {
   background-image: url(../images/fewcloudsnight.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .mist {
   background-image: url(../images/mist.jpeg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .mistnight {
   background-image: url(../images/mistnight.jpeg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .nightrain {
   background-image: url(../images/nightrain.jpeg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .nightsnow {
   background-image: url(../images/nightsnow.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .nightthunderstorm {
   background-image: url(../images/nightthunderstom.jpeg);
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .rain {
   background-image: url(../images/rain.jpeg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .scatteredcloud {
   background-image: url(../images/scatteredcloud.jpeg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .scatterednight {
   background-image: url(../images/scatterenight.jpeg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .snow {
   background-image: url(../images/snow.jpeg);
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .thunderstorm {
   background-image: url(../images/thunderstorm.jpeg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+}
+
+time {
+  font-weight: 600;
 }
 
 h1 {
   font-size: xxx-large;
+  font-weight: 700;
   text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 .h1 {
   font-weight: 900;
+  text-shadow: 2px 2px #333;
+}
+
+.h3 {
+  font-weight: 600;
+}
+
+.h4 {
+  font-weight: 600;
 }
 
 #loader {
