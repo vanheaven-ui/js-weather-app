@@ -1,5 +1,9 @@
 import { displaySect, dateVar, userInput } from './dom-ref';
 
+// const img = new Image();
+// img.src = myImg;
+// console.log(img);
+
 const createDisplayElements = (() => {
   const myCreateElement = (tag, classAttr = '') => {
     const elem = document.createElement(tag);
@@ -74,63 +78,63 @@ const backGroundMgr = (desc) => {
     switch (desc) {
       case 'clear sky':
         document.body.setAttribute(
-          'style',
-          'background: linear-gradient(to bottom, #9be2fe 0%,#67d1fb 100%);',
+          'class',
+          'clearsky',
         );
         break;
       case 'few clouds':
         document.body.setAttribute(
-          'style',
-          'background: linear-gradient(to bottom, #1e528e 0%,#265889 50%,#9da671 100%); color: #f1f1e2;',
+          'class',
+          'fewcloud',
         );
         break;
       case 'scattered clouds':
         document.body.setAttribute(
-          'style',
-          'background: linear-gradient(to bottom, #1e528e 0%,#265889 50%,#9da671 100%); color: #f1f1e2;',
+          'class', 'scatteredcloud'
+          // 'background: linear-gradient(to bottom, #1e528e 0%,#265889 50%,#9da671 100%); color: #f1f1e2;',
         );
         break;
       case 'broken clouds':
         document.body.setAttribute(
-          'style',
-          'background: linear-gradient(to bottom, #1e528e 0%,#265889 50%,#9da671 100%); color: #f1f1e2;',
+          'class', 'scatteredcloud'
+          // 'background: linear-gradient(to bottom, #1e528e 0%,#265889 50%,#9da671 100%); color: #f1f1e2;',
         );
         break;
       case 'shower rain':
         document.body.setAttribute(
-          'style',
-          'background: linear-gradient(to bottom, #2473ab 0%,#1e528e 70%,#5b7983 100%); color: #fff;',
+          'class', 'rain'
+          // 'background: linear-gradient(to bottom, #2473ab 0%,#1e528e 70%,#5b7983 100%); color: #fff;',
         );
         break;
       case 'rain':
         document.body.setAttribute(
-          'style',
-          'background: linear-gradient(to bottom, #2473ab 0%,#1e528e 70%,#5b7983 100%); color: #fff;',
+          'class', 'rain'
+          // 'background: linear-gradient(to bottom, #2473ab 0%,#1e528e 70%,#5b7983 100%); color: #fff;',
         );
         break;
       case 'thunderstorm':
         document.body.setAttribute(
-          'style',
-          'background: linear-gradient(to bottom, #2473ab 0%,#1e528e 70%,#5b7983 100%); color: #fff;',
+          'class', 'thunderstorm'
+          // 'background: linear-gradient(to bottom, #2473ab 0%,#1e528e 70%,#5b7983 100%); color: #fff;',
         );
         break;
       case 'snow':
         document.body.setAttribute(
-          'style',
-          'background: linear-gradient(to bottom, #3987c9 0%, #e1e5ed 100%);',
+          'class', 'snow'
+          // 'background: linear-gradient(to bottom, #3987c9 0%, #e1e5ed 100%);',
         );
         break;
       case 'mist':
         document.body.setAttribute(
-          'style',
-          'background: linear-gradient(to bottom, #b7eaff 0%,#94dfff 100%);',
+          'class', 'mist'
+          // 'background: linear-gradient(to bottom, #b7eaff 0%,#94dfff 100%);',
         );
         document.querySelector('.row').setAttribute('style', 'color: #333; background-color: rgba(255, 254, 251, 0.5);');
         break;
       default:
         document.body.setAttribute(
-          'style',
-          'background: linear-gradient(to bottom, #154277 0%,#576e71 30%,#e1c45e 70%,#b26339 100%); color: #f1f1e2;',
+          'class', 'default'
+          // 'background: linear-gradient(to bottom, #154277 0%,#576e71 30%,#e1c45e 70%,#b26339 100%); color: #f1f1e2;',
         );
         document.querySelector('.row').setAttribute('style', 'background-color: rgba(255, 255, 255, 0.3); color: #333;');
         break;
@@ -139,60 +143,60 @@ const backGroundMgr = (desc) => {
     switch (desc) {
       case 'clear sky':
         document.body.setAttribute(
-          'style',
+          'class',
           'background: linear-gradient(to bottom, #010A10 30%,#59230B 80%,#2F1107 100%); color: #f1f1e2;',
         );
         break;
       case 'few clouds':
         document.body.setAttribute(
-          'style',
+          'class',
           'background: linear-gradient(to bottom, #020111 10%,#3a3a52 100%); color: #fff;',
         );
         break;
       case 'scattered clouds':
         document.body.setAttribute(
-          'style',
+          'class',
           'background: linear-gradient(to bottom, #020111 60%,#20202c 100%); color: #fff',
         );
         break;
       case 'broken clouds':
         document.body.setAttribute(
-          'style',
+          'class',
           'background: linear-gradient(to bottom, #020111 60%,#20202c 100%); color: #fff',
         );
         break;
       case 'shower rain':
         document.body.setAttribute(
-          'style',
+          'class',
           'background: linear-gradient(to bottom, #020111 60%,#20202c 100%); color: #fff;',
         );
         break;
       case 'rain':
         document.body.setAttribute(
-          'style',
+          'class',
           'background: linear-gradient(to bottom, #020111 60%,#20202c 100%); color: #fff;',
         );
         break;
       case 'thunderstorm':
         document.body.setAttribute(
-          'style',
+          'class',
           'background: linear-gradient(to bottom, #020111 85%,#191621 100%); color: #fff;',
         );
         break;
       case 'snow':
         document.body.setAttribute(
-          'style',
+          'class',
           'background: linear-gradient(to bottom, #b7eaff 0%,#94dfff 100%); color: #111;',
         );
         break;
       case 'mist':
         document.body.setAttribute(
-          'style',
+          'class',
           'background: linear-gradient(to bottom, #b7eaff 0%,#94dfff 100%); color: #111',
         );
         break;
       default:
-        document.body.setAttribute('style', 'background: linear-gradient(to bottom, #020111 10%,#3a3a52 100%); color: #fff;');
+        document.body.setAttribute(style, 'background: linear-gradient(to bottom, #020111 10%,#3a3a52 100%); color: #fff;');
         break;
     }
   }

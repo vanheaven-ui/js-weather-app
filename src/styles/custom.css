@@ -22,9 +22,113 @@
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   background-repeat: no-repeat;
   font-family: Gotham Narrow SSm A, Gotham Narrow SSm B, Rubik, Lato, sans-serif;
+  color: #fff;
+}
+
+.default {
+  background-image: url(../images/default.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.clearsky {
+  background-image: url(../images/clearsky.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.clearskynight {
+  background-image: url(../images/clearskynight.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.fewcloud {
+  background-image: url(../images/fewcloud.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.fewcloudnight {
+  background-image: url(../images/fewcloudsnight.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.mist {
+  background-image: url(../images/mist.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.mistnight {
+  background-image: url(../images/mistnight.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.nightrain {
+  background-image: url(../images/nightrain.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.nightsnow {
+  background-image: url(../images/nightsnow.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.nightthunderstorm {
+  background-image: url(../images/nightthunderstom.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.rain {
+  background-image: url(../images/rain.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.scatteredcloud {
+  background-image: url(../images/scatteredcloud.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.scatterednight {
+  background-image: url(../images/scatterenight.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.snow {
+  background-image: url(../images/snow.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.thunderstorm {
+  background-image: url(../images/thunderstorm.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 h1 {
