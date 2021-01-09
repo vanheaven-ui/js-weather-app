@@ -69,7 +69,7 @@ With the installations above complete, you are set to use the code and view the 
 - Then run ``cd js-weather-app`` to access the project directory.
 - Open the project directory in your editor of choice. For example running ``code .`` will open the project in VSCode.
 - Run ``npm start`` to start webpack-dev-server.
-- When complete, open the index.html file using your browser.
+- If everything worked well, the browser should automatically render the weather application on localhost:8080.
 
 ## ✒️  Author <a name = "author"></a>
 
