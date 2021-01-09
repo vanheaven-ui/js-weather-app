@@ -28,9 +28,9 @@ A web application to provide weather details of the place entered by the user.
 This project was a task by [Microverse Inc.](https://www.microverse.org/) to build a web application where users can request weather information of any choice city. To achieve this, the web application in this repository makes use of the [open weather map api](https://openweathermap.org/) and ES6 features like arrow functions, both promises, and async and await for asynchronous processes. More so, webpack was used to bundle the different script files into one file for distribution.
 
 ## App Deployment
-The built app is published through Github pages <br />
+The built app is hosted on netlify <br />
 
-### You may see the live version [here](https://vanheaven-ui.github.io/js-weather-app/)
+### You may see the live version [here](https://elastic-shannon-e9e91c.netlify.app/)
 
 ## 🔧 Built with<a name = "with"></a>
 
