@@ -118,6 +118,15 @@ h1 {
   text-shadow: 2px 2px #333;
 }
 
+.my-text-shadow {
+  text-shadow: 1px 1px #fff;
+}
+
+.clrsky-shadow {
+  color: #f3f3f3;
+  text-shadow: 2px 2px #111;
+}
+
 .h3 {
   font-weight: 600;
 }

@@ -1,9 +1,5 @@
 import { displaySect, dateVar, userInput } from './dom-ref';
 
-// const img = new Image();
-// img.src = myImg;
-// console.log(img);
-
 const createDisplayElements = (() => {
   const myCreateElement = (tag, classAttr = '') => {
     const elem = document.createElement(tag);
@@ -75,67 +71,65 @@ const clearInput = async () => {
 
 const backGroundMgr = (desc) => {
   if (new Date().getHours() < 19) {
+    document.querySelector('.h1').setAttribute('style', 'text-shadow: 2px 2px #fff;');
     switch (desc) {
       case 'clear sky':
         document.body.setAttribute(
           'class',
-          'clearsky size-no-repeat',
+          'clearsky size-no-repeat my-text-shadow',
         );
         break;
       case 'few clouds':
         document.body.setAttribute(
           'class',
-          'fewcloud size-no-repeat',
+          'fewcloud size-no-repeat my-text-shadow',
         );
         break;
       case 'scattered clouds':
         document.body.setAttribute(
-          'class', 'scatteredcloud size-no-repeat'
-          // 'background: linear-gradient(to bottom, #1e528e 0%,#265889 50%,#9da671 100%); color: #f1f1e2;',
+          'class', 'scatteredcloud size-no-repeat my-text-shadow'
         );
         break;
       case 'broken clouds':
         document.body.setAttribute(
-          'class', 'scatteredcloud size-no-repeat'
-          // 'background: linear-gradient(to bottom, #1e528e 0%,#265889 50%,#9da671 100%); color: #f1f1e2;',
+          'class', 'scatteredcloud size-no-repeat my-text-shadow'
         );
         break;
       case 'shower rain':
         document.body.setAttribute(
-          'class', 'rain size-no-repeat'
-          // 'background: linear-gradient(to bottom, #2473ab 0%,#1e528e 70%,#5b7983 100%); color: #fff;',
+          'class', 'rain size-no-repeat my-text-shadow'
         );
         break;
       case 'rain':
         document.body.setAttribute(
-          'class', 'rain'
-          // 'background: linear-gradient(to bottom, #2473ab 0%,#1e528e 70%,#5b7983 100%); color: #fff;',
+          'class', 'rain size-no-repeat my-text-shadow'
         );
         break;
       case 'thunderstorm':
         document.body.setAttribute(
-          'class', 'thunderstorm size-no-repeat'
-          // 'background: linear-gradient(to bottom, #2473ab 0%,#1e528e 70%,#5b7983 100%); color: #fff;',
+          'class', 'thunderstorm size-no-repeat my-text-shadow'
         );
         break;
       case 'snow':
         document.body.setAttribute(
-          'class', 'snow size-no-repeat'
-          // 'background: linear-gradient(to bottom, #3987c9 0%, #e1e5ed 100%);',
+          'class', 'snow size-no-repeat my-text-shadow'
         );
         break;
       case 'mist':
         document.body.setAttribute(
-          'class', 'mist size-no-repeat'
-          // 'background: linear-gradient(to bottom, #b7eaff 0%,#94dfff 100%);',
+          'class', 'mist size-no-repeat my-text-shadow'
         );
         document.querySelector('.row').setAttribute('style', 'color: #333; background-color: rgba(255, 254, 251, 0.5);');
         break;
       default:
         document.body.setAttribute(
           'class', 'default size-no-repeat'
-          // 'background: linear-gradient(to bottom, #154277 0%,#576e71 30%,#e1c45e 70%,#b26339 100%); color: #f1f1e2;',
         );
+        document.querySelector('.h4').setAttribute('style', 'color: #333; text-shadow: 2px 2px #fff;');
+        document.querySelector('#search-area h1').setAttribute('style', 'text-shadow: 2px 2px #f1f1e2;');
+        document.querySelector('#search-area').setAttribute('style', 'color: #111;');
+        document.querySelector('.wrap-1').setAttribute('style', 'color: gainsboro; text-shadow: 2px 2px #111;');
+        document.querySelector('span.h1').setAttribute('style', 'color: red');
         document.querySelector('.row').setAttribute('style', 'background-color: rgba(255, 255, 255, 0.3); color: #333;');
         break;
     }
