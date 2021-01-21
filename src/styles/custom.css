@@ -122,6 +122,10 @@ h1 {
   text-shadow: 1px 1px #fff;
 }
 
+.my-black-text-shadow {
+  text-shadow: 1px 1px #333;
+}
+
 .clrsky-shadow {
   color: #f3f3f3;
   text-shadow: 2px 2px #111;

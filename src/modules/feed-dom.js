@@ -76,33 +76,49 @@ const backGroundMgr = (desc) => {
       case 'clear sky':
         document.body.setAttribute(
           'class',
-          'clearsky size-no-repeat my-text-shadow',
+          'clearsky size-no-repeat my-black-text-shadow',
         );
+        document.querySelector('.row').setAttribute('style', 'background-color: rgba(2, 2, 255, 0.3');
+        document.querySelector('.h1').setAttribute('style', 'text-shadow: 2px, 2px, #111;');
+        document.querySelector('#toggle-btn').classList.add('my-text-shadow');
+
         break;
       case 'few clouds':
         document.body.setAttribute(
           'class',
-          'fewcloud size-no-repeat my-text-shadow',
+          'fewcloud size-no-repeat my-black-text-shadow',
         );
+        document.querySelector('.row').setAttribute('style', 'background-color: rgba(5, 5, 255, 0.3');
+        document.querySelector('.h1').setAttribute('style', 'text-shadow: 2px, 2px, #111;');
+        document.querySelector('#toggle-btn').classList.add('my-text-shadow');
         break;
       case 'scattered clouds':
         document.body.setAttribute(
-          'class', 'scatteredcloud size-no-repeat my-text-shadow'
+          'class', 'scatteredcloud size-no-repeat my-black-text-shadow'
         );
+        document.querySelector('.row').setAttribute('style', 'background-color: rgba(5, 5, 255, 0.3');
+        document.querySelector('.h1').setAttribute('style', 'text-shadow: 2px, 2px, #111;');
+        document.querySelector('#toggle-btn').classList.add('my-text-shadow'); 
         break;
       case 'broken clouds':
         document.body.setAttribute(
-          'class', 'scatteredcloud size-no-repeat my-text-shadow'
+          'class', 'scatteredcloud size-no-repeat my-black-text-shadow'
         );
+        document.querySelector('.row').setAttribute('style', 'background-color: rgba(5, 5, 255, 0.3');
+        document.querySelector('.h1').setAttribute('style', 'text-shadow: 2px, 2px, #111;');
+        document.querySelector('#toggle-btn').classList.add('my-text-shadow');
         break;
       case 'shower rain':
         document.body.setAttribute(
-          'class', 'rain size-no-repeat my-text-shadow'
+          'class', 'rain size-no-repeat my-black-text-shadow'
         );
+        document.querySelector('.row').setAttribute('style', 'background-color: rgba(5, 5, 255, 0.3');
+        document.querySelector('.h1').setAttribute('style', 'text-shadow: 2px, 2px, #111;'); 
+        document.querySelector('#toggle-btn').classList.add('my-text-shadow');
         break;
       case 'rain':
         document.body.setAttribute(
-          'class', 'rain size-no-repeat my-text-shadow'
+          'class', 'rain size-no-repeat my-black-text-shadow'
         );
         break;
       case 'thunderstorm':
@@ -123,14 +139,15 @@ const backGroundMgr = (desc) => {
         break;
       default:
         document.body.setAttribute(
-          'class', 'default size-no-repeat'
+          'class', 'default size-no-repeat my-black-text-shadow'
         );
         document.querySelector('.h4').setAttribute('style', 'color: #333; text-shadow: 2px 2px #fff;');
         document.querySelector('#search-area h1').setAttribute('style', 'text-shadow: 2px 2px #f1f1e2;');
         document.querySelector('#search-area').setAttribute('style', 'color: #111;');
         document.querySelector('.wrap-1').setAttribute('style', 'color: gainsboro; text-shadow: 2px 2px #111;');
         document.querySelector('span.h1').setAttribute('style', 'color: red');
-        document.querySelector('.row').setAttribute('style', 'background-color: rgba(255, 255, 255, 0.3); color: #333;');
+        document.querySelector('#toggle-btn').classList.add('my-text-shadow');
+        document.querySelector('.row').setAttribute('style', 'background-color: rgba(0, 0, 255, 0.3); color: #333;');
         break;
     }
   } else {
@@ -247,6 +264,7 @@ const updateUI = (
     'span',
     'btn bg-success rounded-circle text-it',
   );
+  convertBtn.id = 'toggle-btn';
   convertBtn.textContent = 'Get °F';
   const addCity = createDisplayElements.myCreateElement(
     'span',
