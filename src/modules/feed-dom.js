@@ -141,7 +141,7 @@ const backGroundMgr = (desc) => {
         document.body.setAttribute(
           'class', 'default size-no-repeat my-black-text-shadow'
         );
-        document.querySelector('.h4').setAttribute('style', 'color: #333; text-shadow: 2px 2px #fff;');
+        document.querySelector('.h4').setAttribute('style', 'color: #333; text-shadow: 1px 1px #fff;');
         document.querySelector('#search-area h1').setAttribute('style', 'text-shadow: 2px 2px #f1f1e2;');
         document.querySelector('#search-area').setAttribute('style', 'color: #111;');
         document.querySelector('.wrap-1').setAttribute('style', 'color: gainsboro; text-shadow: 2px 2px #111;');
