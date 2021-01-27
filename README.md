@@ -1,7 +1,7 @@
 <div align="center">
 
-  ![Logo]('screenshot/logo.png')
-  
+  ![Logo](screenshot/logo.png)
+
   <h1><b>Javascript Weather Application </b></h1>
 
 
